@@ -12,7 +12,7 @@ import {
   default as ToastMessage,
 } from "./ToastMessage";
 
-import _ from "lodash";
+import includes from "lodash";
 
 export default class ToastContainer extends Component {
 
@@ -74,7 +74,7 @@ export default class ToastContainer extends Component {
 
   _notify(type, message, title, optionsOverride = {}) {
     if (this.props.preventDuplicates) {
-      if (_.includes(this.state.messageList, message)) {
+      if (includes(this.state.messageList, message)) {
         return;
       }
     }
